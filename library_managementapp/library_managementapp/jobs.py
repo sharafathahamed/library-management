@@ -1,0 +1,17 @@
+import frappe
+
+def update_transac_count(member):
+    frappe.log_error("lllll", member)
+    count = frappe.db.count(
+        "Library Transaction",
+        {"library_member": member}
+    )
+    frappe.db.set_value(
+        "Library Member",
+        member,
+        "transaction_count",
+        count
+    )
+    frappe.logger().info(
+        f"Updated transaction for {member}:{count}"
+    )

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "LM.####",
+ "autoname": "field:full_name",
  "creation": "2026-01-10 01:35:35.478473",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -11,7 +11,8 @@
   "full_name",
   "column_break_gfzh",
   "email_address",
-  "phone"
+  "phone",
+  "transaction_count"
  ],
  "fields": [
   {
@@ -30,7 +31,8 @@
    "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Full Name",
-   "read_only": 1
+   "read_only": 1,
+   "unique": 1
   },
   {
    "fieldname": "column_break_gfzh",
@@ -47,16 +49,21 @@
    "fieldtype": "Phone",
    "label": "Phone",
    "options": "Phone"
+  },
+  {
+   "fieldname": "transaction_count",
+   "fieldtype": "Int",
+   "label": "Transaction Count"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-10 13:16:52.100300",
+ "modified": "2026-01-21 16:32:22.278579",
  "modified_by": "Administrator",
  "module": "Library Managementapp",
  "name": "Library Member",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

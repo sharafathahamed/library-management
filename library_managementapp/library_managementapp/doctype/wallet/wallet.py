@@ -5,6 +5,5 @@
 from frappe.model.document import Document
 
 
-class LibraryMember(Document):
-	def before_naming(self):
-		self.full_name =f'{self.first_name} {self.last_name or " "}'
+class Wallet(Document):
+	pass

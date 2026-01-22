@@ -1,17 +1,22 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2026-01-10 01:30:20.596268",
+ "autoname": "field:article_name",
+ "creation": "2026-01-13 13:09:15.999617",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "article_name",
   "image",
   "author",
+  "price",
+  "creation_date",
   "column_break_ctqp",
   "isbn",
   "status",
   "publisher",
+  "number_of_available_books",
+  "custom_total_books",
   "section_break_weol",
   "description"
  ],
@@ -19,7 +24,8 @@
   {
    "fieldname": "article_name",
    "fieldtype": "Data",
-   "label": "Article Name"
+   "label": "Article Name",
+   "unique": 1
   },
   {
    "fieldname": "image",
@@ -32,6 +38,11 @@
    "label": "Author"
   },
   {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price"
+  },
+  {
    "fieldname": "column_break_ctqp",
    "fieldtype": "Column Break"
   },
@@ -41,6 +52,7 @@
    "label": "ISBN"
   },
   {
+   "default": "Available",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -52,6 +64,16 @@
    "label": "Publisher"
   },
   {
+   "fieldname": "number_of_available_books",
+   "fieldtype": "Int",
+   "label": "Number of Available Books"
+  },
+  {
+   "fieldname": "custom_total_books",
+   "fieldtype": "Int",
+   "label": "Total Books"
+  },
+  {
    "fieldname": "section_break_weol",
    "fieldtype": "Section Break"
   },
@@ -59,15 +81,22 @@
    "fieldname": "description",
    "fieldtype": "Text Editor",
    "label": "Description"
+  },
+  {
+   "default": "Today",
+   "fieldname": "creation_date",
+   "fieldtype": "Date",
+   "label": "Creation Date"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-10 15:29:29.777968",
+ "modified": "2026-01-22 15:47:42.802046",
  "modified_by": "Administrator",
  "module": "Library Managementapp",
  "name": "Article",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

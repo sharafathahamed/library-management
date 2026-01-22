@@ -1,0 +1,29 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-01-15 21:18:56.999844",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-01-15 21:21:54.239751",
+ "modified_by": "Administrator",
+ "module": "Library Managementapp",
+ "name": "QueryReport",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT article AS \"Article\",library_member AS \"Library Member\",issue_date AS \"Issue date\"\nFROM `tabLibrary Transaction`",
+ "ref_doctype": "Library Transaction",
+ "report_name": "QueryReport",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

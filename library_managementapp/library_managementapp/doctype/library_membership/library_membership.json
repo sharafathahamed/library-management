@@ -1,17 +1,23 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "LM.####",
  "creation": "2026-01-10 13:23:47.127964",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "library_member",
   "full_name",
-  "column_break_htpx",
   "from_date",
+  "column_break_xqlr",
+  "membership_plans",
   "to_date",
+  "amount",
+  "duration_days",
   "paid",
-  "amended_from"
+  "section_break_qsrd",
+  "amended_from",
+  "email"
  ],
  "fields": [
   {
@@ -30,24 +36,14 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_htpx",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "from_date",
-   "fieldtype": "Date",
-   "label": "From date"
-  },
-  {
-   "fieldname": "to_date",
-   "fieldtype": "Date",
-   "label": "To Date"
-  },
-  {
    "default": "0",
    "fieldname": "paid",
    "fieldtype": "Check",
    "label": "Paid"
+  },
+  {
+   "fieldname": "column_break_xqlr",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "amended_from",
@@ -58,16 +54,55 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "membership_plans",
+   "fieldtype": "Select",
+   "label": "Membership plans",
+   "options": "1 month\n3 months\n1 year"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "duration_days",
+   "fieldtype": "Int",
+   "label": "Duration Days"
+  },
+  {
+   "fieldname": "section_break_qsrd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "library_member.email_address",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "email",
+   "options": "Email"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-10 13:34:28.643309",
+ "modified": "2026-01-20 14:19:41.987369",
  "modified_by": "Administrator",
  "module": "Library Managementapp",
  "name": "Library Membership",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

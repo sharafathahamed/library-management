@@ -8,7 +8,11 @@
   "article",
   "library_member",
   "type",
-  "date",
+  "issue_date",
+  "due_date",
+  "return_date",
+  "delay_days",
+  "penalty_amount",
   "amended_from"
  ],
  "fields": [
@@ -31,11 +35,6 @@
    "options": "Issue\nReturn"
   },
   {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -44,13 +43,38 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "label": "Return Date"
+  },
+  {
+   "fieldname": "delay_days",
+   "fieldtype": "Int",
+   "label": "Delay Days"
+  },
+  {
+   "fieldname": "penalty_amount",
+   "fieldtype": "Currency",
+   "label": "Penalty Amount"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-10 16:06:25.866368",
+ "modified": "2026-01-22 09:24:23.477105",
  "modified_by": "Administrator",
  "module": "Library Managementapp",
  "name": "Library Transaction",

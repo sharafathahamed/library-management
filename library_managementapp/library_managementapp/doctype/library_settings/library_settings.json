@@ -6,7 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "loan_period",
-  "max_articles"
+  "max_articles",
+  "fine_per_day"
  ],
  "fields": [
   {
@@ -18,13 +19,18 @@
    "fieldname": "max_articles",
    "fieldtype": "Int",
    "label": "Number of issued articles"
+  },
+  {
+   "fieldname": "fine_per_day",
+   "fieldtype": "Currency",
+   "label": "Fine Per Day"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-01-10 16:18:06.633007",
+ "modified": "2026-01-21 21:58:22.631045",
  "modified_by": "Administrator",
  "module": "Library Managementapp",
  "name": "Library Settings",
