@@ -2,11 +2,14 @@ import frappe
 from frappe.model.document import Document
 
 class LibraryMember(Document):
+
     def before_naming(self):
         self.full_name = f"{self.first_name} {self.last_name or ''}".strip()
+
     def after_insert(self):
         self.send_mail_html()
         self.create_user()
+
     def create_user(self):
         if not self.email_address:
             return

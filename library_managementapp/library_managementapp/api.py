@@ -18,4 +18,4 @@ def count_job(member):
 #             "transaction_id":["is","not set"]
 #         },
 #         fields=["article","issue_date","name"]
-    # )
+#     )

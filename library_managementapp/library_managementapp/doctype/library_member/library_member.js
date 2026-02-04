@@ -8,21 +8,24 @@
 // });
 frappe.ui.form.on('Library Member',{
     refresh: function(frm){
-        frm.add_custom_button('Calculate transaction count', ()=> {
-            frappe.call({
-                method: "library_managementapp.library_managementapp.api.count_job",
-                args:{
-                    member:frm.doc.name
-                },
-                callback(){
-                    frappe.msgprint("Background job start. Pl.refresh");
-                }
+        if(!frm.is_new()){
+            frm.add_custom_button('Calculate transaction count', ()=> {
+                frappe.call({
+                    method: "library_managementapp.library_managementapp.api.count_job",
+                    args:{
+                        member:frm.doc.name
+                    },
+                    callback(){
+                        frappe.msgprint("Background job start. Pl.refresh");
+                    }
+                });
             });
-        });
-        frm.add_custom_button('Create Transaction', () => {
-            frappe.new_doc('Library Transaction', {
-                library_member: frm.doc.name
+            frm.add_custom_button('Create Transaction', () => {
+                frappe.new_doc('Library Transaction', {
+                    library_member: frm.doc.name
+                })
             })
-        })
+        }
     }
 })
+

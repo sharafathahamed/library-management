@@ -53,6 +53,7 @@
    "label": "Due Date"
   },
   {
+   "depends_on": "eval: doc.type==\"Return\"",
    "fieldname": "return_date",
    "fieldtype": "Date",
    "label": "Return Date"
@@ -101,7 +102,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-04 11:06:36.167987",
+ "modified": "2026-02-04 13:25:54.522889",
  "modified_by": "Administrator",
  "module": "Library Managementapp",
  "name": "Library Transaction",
