@@ -60,7 +60,7 @@ class LibraryTransaction(Document):
         amount=article.price
 
         if wallet.wallet_amount < amount:
-            frappe.throw("Insufficient wallet balance")       
+            frappe.throw("Insufficient wallet balance")          
         
     def amount_deduct_check(self):
         wallet=frappe.get_doc(
@@ -134,6 +134,7 @@ class LibraryTransaction(Document):
         else:
             self.delay_days=0
             self.penalty_amount=0
+
 
 @frappe.whitelist()
 def get_articles_for_member(doctype, txt, searchfield, start, page_len, filters):

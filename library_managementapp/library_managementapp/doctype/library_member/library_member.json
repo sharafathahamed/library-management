@@ -48,7 +48,8 @@
    "fieldname": "phone",
    "fieldtype": "Phone",
    "label": "Phone",
-   "options": "Phone"
+   "options": "Phone",
+   "permlevel": 1
   },
   {
    "fieldname": "transaction_count",
@@ -59,7 +60,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-21 16:32:22.278579",
+ "modified": "2026-01-30 15:01:52.505040",
  "modified_by": "Administrator",
  "module": "Library Managementapp",
  "name": "Library Member",

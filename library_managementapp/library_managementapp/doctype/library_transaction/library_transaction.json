@@ -5,23 +5,21 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "article",
+  "column_break_kwtw",
   "library_member",
+  "article",
+  "list_of_articles",
   "type",
   "issue_date",
   "due_date",
   "return_date",
   "delay_days",
   "penalty_amount",
+  "is_returned",
+  "transaction_id",
   "amended_from"
  ],
  "fields": [
-  {
-   "fieldname": "article",
-   "fieldtype": "Link",
-   "label": "Article",
-   "options": "Article"
-  },
   {
    "fieldname": "library_member",
    "fieldtype": "Link",
@@ -68,13 +66,42 @@
    "fieldname": "penalty_amount",
    "fieldtype": "Currency",
    "label": "Penalty Amount"
+  },
+  {
+   "fieldname": "column_break_kwtw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.type==\"Issue\"",
+   "fieldname": "is_returned",
+   "fieldtype": "Check",
+   "label": "isReturned"
+  },
+  {
+   "fieldname": "transaction_id",
+   "fieldtype": "Link",
+   "label": "Transaction Id",
+   "options": "Library Transaction"
+  },
+  {
+   "fieldname": "list_of_articles",
+   "fieldtype": "Table",
+   "label": "List of Articles",
+   "options": "List of Articles"
+  },
+  {
+   "fieldname": "article",
+   "fieldtype": "Link",
+   "label": "Article",
+   "options": "Article"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-22 09:24:23.477105",
+ "modified": "2026-02-04 11:06:36.167987",
  "modified_by": "Administrator",
  "module": "Library Managementapp",
  "name": "Library Transaction",

@@ -37,8 +37,6 @@ frappe.ui.form.on('Library Transaction', {
         apply_article_filter(frm);
     }
 });
-
-
 function apply_article_filter(frm) {
 
     if (!frm.doc.library_member || frm.doc.type !== "Issue") return;
@@ -52,8 +50,6 @@ function apply_article_filter(frm) {
         };
     });
 }
-
-
 function setFilter(frm){
     frm.set_query("article",function(){
         if(frm.doc.type=="Issue"){

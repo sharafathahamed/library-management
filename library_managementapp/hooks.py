@@ -116,7 +116,10 @@ app_license = "mit"
 # Permissions
 # -----------
 # Permissions evaluated in scripted ways
-
+permission_query_conditions = {
+    "Library Member": "library_managementapp.permissions.library_member_condition",
+    # "Library Transaction":"library_managementapp.permissions.library_transaction_condition"
+    }
 # permission_query_conditions = {
 # 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
 # }
@@ -147,7 +150,11 @@ app_license = "mit"
 
 # Scheduled Tasks
 # ---------------
-
+scheduler_events={
+    "daily":[
+        "library_managementapp.expiremail.send_memb_exp"
+    ]
+}
 # scheduler_events = {
 # 	"all": [
 # 		"library_managementapp.tasks.all"

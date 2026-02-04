@@ -1,7 +1,6 @@
 import frappe
 
 def update_transac_count(member):
-    frappe.log_error("lllll", member)
     count = frappe.db.count(
         "Library Transaction",
         {"library_member": member}
@@ -9,9 +8,8 @@ def update_transac_count(member):
     frappe.db.set_value(
         "Library Member",
         member,
-        "transaction_count",
+        "total_transaction",
         count
     )
-    frappe.logger().info(
-        f"Updated transaction for {member}:{count}"
-    )
+    frappe.db.commit()
+    frappe.logger().info(f"Updated transaction for {member}: {count}")

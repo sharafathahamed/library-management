@@ -19,23 +19,25 @@ def execute(filters=None):
     if filters.get("transaction_type"):
         conditions.append("lt.type = %(transaction_type)s")
         values["transaction_type"] = filters.get("transaction_type")
+    if filters.get("transaction_id")=="not_set":
+        conditions.append("lt.transaction_id IS NULL")
 
     where = ""
     if conditions:
         where = "WHERE " + " AND ".join(conditions)
 
     query = f"""
-        SELECT
-            lt.library_member,
-            lm.full_name,
-            lt.article,
-            lt.type AS transaction_type,
-            lt.date AS transaction_date
-        FROM `tabLibrary Transaction` lt
-        LEFT JOIN `tabLibrary Membership` lm
-            ON lm.library_member = lt.library_member
-        {where}
-        ORDER BY lt.date DESC
+    SELECT
+        lt.library_member,
+        lm.full_name,
+        lt.article,
+        lt.type AS transaction_type,
+        lt.issue_date AS transaction_date
+    FROM `tabLibrary Transaction` lt
+    LEFT JOIN `tabLibrary Membership` lm
+        ON lm.library_member = lt.library_member
+    {where}
+    ORDER BY lt.issue_date DESC
     """
 
     columns = [

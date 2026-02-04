@@ -17,6 +17,12 @@ frappe.query_reports["Member-wise Transaction Report"] = {
             label: "Transaction Type",
             fieldtype: "Select",
             options: ["", "Issue", "Return"]
+        },
+        {
+            fieldname:"transaction_id",
+            label:"transaction_id",
+            fieldtype:"Data",
+            hidden: 1
         }
     ]
 };
